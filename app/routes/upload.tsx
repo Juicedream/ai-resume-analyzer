@@ -82,8 +82,8 @@ const Upload = () => {
            await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
            setStatusText("Analyzing complete, redirecting...");
-
            console.log({data})
+           navigate(`/resume/${uuid}`);
        }catch(err){
         console.error("Error in handleAnalyze function:", err);
         setIsProcessing(false);
